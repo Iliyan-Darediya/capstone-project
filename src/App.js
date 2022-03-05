@@ -2,6 +2,8 @@ import Main from "./components/Main";
 import { Switch,Link,Route } from "react-router-dom";
 
 import NewSession from "./components/NewSession";
+import Chooser from "./components/Chooser"
+import Cheecker from "./components/Cheecker";
 import ExistingSession from "./components/ExistingSession";
 function App() {
   return (
@@ -22,6 +24,12 @@ function App() {
           </Route>
           <Route path = "/newSession">
             <NewSession />
+          </Route>
+          <Route path="/chooser">
+            <Chooser />
+          </Route>
+          <Route path="/cheecker">
+            <Cheecker />
           </Route>
         </Switch>
       </header>
