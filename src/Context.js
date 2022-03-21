@@ -20,8 +20,22 @@ function ContextProvider({children}) {
                 if(parseInt(item.doc.id)>=0){
                     setCurrentId(item.doc.id)
                 }
+                if(item.doc.id==currentId){
+                    setObj(item.doc.data())
+                    setCurrentId(item.doc.id)
+                }
             })
         }) 
+        /* db.collection("User").onSnapshot(snapshot=>{
+            let changes = snapshot.docChanges()
+            changes.forEach(item=>{
+                
+                //console.log(item.doc.id)
+                if(parseInt(item.doc.id)>=0){
+                    setCurrentId(item.doc.id)
+                } 
+            })
+        }) */
     },[])
     
     //console.log("current id from context "+currentId)
@@ -56,7 +70,7 @@ function ContextProvider({children}) {
         })
     }
 
-    const checkMatches=()=>{
+    const checkMatches=(id)=>{
         
         /* var docRef = db.collection("User").doc(currentId.toString());
         docRef.get().then((doc) => {
@@ -69,32 +83,34 @@ function ContextProvider({children}) {
         }).catch((error) => {
             console.log("Error getting document:", error);
         }); */
-        db.collection("User").onSnapshot(snapshot=>{
+         
+        //console.log(obj)
+        
+        /* db.collection("User").onSnapshot(snapshot=>{
             let changes = snapshot.docChanges()
             changes.forEach(item=>{
-                if(item.doc.id==currentId){
+                if(item.doc.id==id){
                     setObj(item.doc.data())
                     setCurrentId(item.doc.id)
                 }
                 //console.log(item.doc.id)
-                /* if(parseInt(item.doc.id)>=0){
+                if(parseInt(item.doc.id)>=0){
                     setCurrentId(item.doc.id)
-                } */
+                } 
             })
-        }) 
-        console.log(obj)
+        }) */
     
         let bunch = []
-        for (const [key, value] of Object.entries(obj)) {
-            value.map(item=>bunch.push(item))
+        /* for (const [key, value] of Object.entries(obj)) {
+            console.log(key)
             //console.log(`${value}`);
-        }
+        } */
         let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) !== index)  
-        console.log(findDuplicates(bunch))
+        //console.log(findDuplicates(bunch))
         setResult(findDuplicates(bunch)); 
-        //console.log(obj)
+        console.log(obj)
         console.log("current Id " + currentId)
-        console.log("result is "+result)
+        //console.log("result is "+result)
     }
 
     return (

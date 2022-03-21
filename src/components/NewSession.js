@@ -19,6 +19,9 @@ function NewSession() {
                     <h3>Hello from NewSession the id is {currentId}</h3>
                 </div>
                 <div className="App-Header">
+                    <button className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
+                        onClick={()=>requestNewId(name)}
+                        >requestNewId</button>
                     <label>User Name</label>
                     <input 
                         className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
@@ -28,9 +31,6 @@ function NewSession() {
                         placeholder="User Name" 
                         onChange={handleName} 
                     />
-                    <button className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
-                        onClick={()=>requestNewId(name)}
-                    >requestNewId</button>
 
                     <button 
                         className="flex items-center px-6 py-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none"
