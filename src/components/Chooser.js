@@ -23,9 +23,9 @@ function Chooser() {
             console.error(err);
         }
     }
-    useEffect(()=>{
+    /* useEffect(()=>{
         console.log(movies)
-    },[movies])
+    },[movies]) */
 
     
     return (

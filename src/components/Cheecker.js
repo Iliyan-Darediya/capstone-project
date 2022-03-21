@@ -11,7 +11,7 @@ function Cheecker() {
         db.collection("User").onSnapshot(snapshot=>{
             let changes = snapshot.docChanges()
             changes.forEach(item=>{
-                if(item.doc.id==9){
+                if(item.doc.id==11){
                     setData(item.doc.data())
                 }
             })
@@ -21,15 +21,17 @@ function Cheecker() {
         let bunch = []
         for(const name in data){
             bunch.push(data[name])
-            //console.log(data[name])
         }
         let ondDBunch = [].concat(...bunch)
         ondDBunch.sort()
-        setDuplicateArray([...new Set(
-            ondDBunch.filter((value, index, self) => self.indexOf(value) !== index))]
-        );
-        setDuplicateArray(duplicateArray.filter(movie=>movie!=="KevinAddedItem0"))
+        console.log(ondDBunch)
+        ondDBunch = ondDBunch.filter((value, index, self) => self.indexOf(value) !== index)
+        console.log(ondDBunch)
+        setDuplicateArray(ondDBunch)
+        setDuplicateArray(movies => movies.filter(movie=>movie!=="KevinAddedItem0"))
+        console.log(duplicateArray)
     },[data])
+
     useEffect(()=>{
         console.log(duplicateArray)
     },[duplicateArray])
