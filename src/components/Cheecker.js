@@ -27,7 +27,8 @@ function Cheecker() {
         ondDBunch.sort()
         setDuplicateArray([...new Set(
             ondDBunch.filter((value, index, self) => self.indexOf(value) !== index))]
-          );
+        );
+        setDuplicateArray(duplicateArray.filter(movie=>movie!=="KevinAddedItem0"))
     },[data])
     useEffect(()=>{
         console.log(duplicateArray)

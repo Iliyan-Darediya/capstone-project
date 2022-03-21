@@ -10,7 +10,7 @@ export default function MovieCard({movie}){
                 alt={movie.title + ' poster'}
             />
             <div className="bg-white h-2/3  px-8 py-4 pt-4">
-                <button className="sticky top-0 border-2 border-black"onClick={()=>addMovie(movie.title)}>add Movie</button>
+                <button className="sticky top-0 border-2 border-black"onClick={()=>addMovie(movie.id)}>add Movie</button>
                 <div className="h-48 px-6 py-4">
                     <h3 className="text-xl font-semibold text-gray-800 dark:text-white">{movie.title}</h3>
                     {/* <h3 className="card--title">{movie.id}</h3> */}

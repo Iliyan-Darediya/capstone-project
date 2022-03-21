@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import {useContext, useState} from "react";
+import {useContext, useState, useEffect} from "react";
 import {Context} from '../Context'
 import MovieCard from "./MovieCard"
 
@@ -23,6 +23,9 @@ function Chooser() {
             console.error(err);
         }
     }
+    useEffect(()=>{
+        console.log(movies)
+    },[movies])
 
     
     return (

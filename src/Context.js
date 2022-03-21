@@ -64,9 +64,9 @@ function ContextProvider({children}) {
         },{merge:true})
     }
 
-    const addMovie=(movieName)=>{
+    const addMovie=(movie_id)=>{
         db.collection("User").doc(currentId).update({
-            [name]:window.firebase.firestore.FieldValue.arrayUnion(movieName)
+            [name]:window.firebase.firestore.FieldValue.arrayUnion(movie_id)
         })
     }
 
