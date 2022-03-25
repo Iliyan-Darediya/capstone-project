@@ -14,6 +14,7 @@ function App() {
           <li className="font-serif text-blue-300 underline m-4"><Link to = "/">App</Link></li>
           <li className="font-serif text-blue-300 underline m-4"><Link to = "/newSession">New Session</Link></li>
           <li className="font-serif text-blue-300 underline m-4"><Link to = "/existingSession">Existing Session</Link></li>
+          <li className="font-serif text-blue-300 underline m-4"><Link to = "/cheecker">Cheecker</Link></li>
         </ul>
         <Switch>
           <Route exact path = "/">
