@@ -28,12 +28,9 @@ function Cheecker() {
         }
         let ondDBunch = [].concat(...bunch)
         ondDBunch.sort()
-        console.log(ondDBunch)
         ondDBunch = ondDBunch.filter((value, index, self) => self.indexOf(value) !== index)
-        console.log(ondDBunch)
         setDuplicateArray(ondDBunch)
         setDuplicateArray(movies => movies.filter(movie=>movie!=="KevinAddedItem0"))
-        console.log(duplicateArray)
     },[data])
 
     return (
@@ -50,7 +47,7 @@ function Cheecker() {
                 }} 
             />
         </header>
-        <div className= "grid grid-cols-3 gap-4 p-12 bg-gray-900">
+        <div className= "grid grid-cols-3 gap-4 p-12 bg-blue-900">
             {duplicateArray.map(movie=><h2 key={movie}>{movie}</h2>)}
         </div>
         </div>
