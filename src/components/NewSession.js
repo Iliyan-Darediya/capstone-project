@@ -19,6 +19,7 @@ function NewSession() {
                     <h3>Hello from NewSession the id is {currentId}</h3>
                 </div>
                 <div className="App-Header">
+                    <h1>Double click to requestNewId</h1>
                     <button className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
                         onClick={()=>requestNewId(name)}
                         >requestNewId</button>
